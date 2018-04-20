@@ -118,9 +118,9 @@ TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 # SELinux
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 
-# Lineage hardware
+# MK hardware
 BOARD_HARDWARE_CLASS := \
-    hardware/samsung/lineagehw
+    hardware/samsung/mkhw
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
