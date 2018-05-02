@@ -3,7 +3,7 @@
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-ifneq ($(filter mk_starlte mk_star2lte, $(TARGET_PRODUCT)),)
+ifneq ($(findstring mk, $(TARGET_PRODUCT)),)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-mokee
 endif
 
