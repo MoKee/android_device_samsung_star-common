@@ -55,13 +55,9 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/configs/audio/mixer_gains.xml:system/etc/mixer_gains.xml \
-    $(LOCAL_PATH)/configs/audio/mixer_paths_r02.xml:system/etc/mixer_paths_r02.xml \
-    $(LOCAL_PATH)/configs/audio/mixer_gains_r02.xml:system/etc/mixer_gains_r02.xml \
-    $(LOCAL_PATH)/configs/audio/mixer_paths_r08.xml:system/etc/mixer_paths_r08.xml \
-    $(LOCAL_PATH)/configs/audio/mixer_gains_r08.xml:system/etc/mixer_gains_r08.xml
+PRODUCT_PACKAGES += \
+    libshim_audio \
+    audioloader
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -87,6 +83,22 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service.9810
+
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.9810
+
+# Fingerprint
+PRODUCT_PACKAGES += \
+    fingerprint.exynos5
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-service.9810
+
+# Keylayout
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/gpio_keys.kl:system/usr/keylayout/gpio_keys.kl
 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
